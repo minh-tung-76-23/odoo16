@@ -8,7 +8,7 @@ class Request(models.Model):
     quantity_intern = fields.Integer("Quantity Intern")
     request = fields.Text(string='Request')
     job_description = fields.Text(string='Job description')
-    interest = fields.Text(string='Interest')
+    benefits = fields.Text(string='Benefits')
     work_time = fields.Text(string='Working time')
     note = fields.Text(string='Note') 
     request_state = fields.Selection(  

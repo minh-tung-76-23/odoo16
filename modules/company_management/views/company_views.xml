@@ -6,7 +6,9 @@
         <field name="arch" type="xml">
             <list>
                 <field name="name" />
+                <field name="manager" />
                 <field name="address" />
+                <field name="business_info" />
                 <field name="contact" />
             </list>
         </field>
@@ -21,7 +23,10 @@
                 <sheet>
                     <group>
                         <field name="name" />
+                        <field name="manager" />
                         <field name="address" />
+                        <field name="business_info" />
+                        <field name="employer" />
                         <field name="contact" />
                     </group>
                     <notebook>
@@ -31,6 +36,11 @@
                                     <field name="name" />
                                     <field name="quantity_intern" />
                                     <field name="request" />
+                                    <field name="job_description" />
+                                    <field name="benefits" />
+                                    <field name="work_time" />
+                                    <field name="note" />
+                                    <field name="request_state" />
                                 </list>
                             </field>
                         </page>
