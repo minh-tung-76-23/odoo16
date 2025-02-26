@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="view_university_list" model="ir.ui.view">
+        <field name="name">university.list</field>
+        <field name="model">university</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name" />
+                <field name="address" />
+                <field name="states_university" />
+            </list>
+        </field>
+    </record>
+
+    <record id="view_university_form" model="ir.ui.view">
+        <field name="name">university.form</field>
+        <field name="model">university</field>
+        <field name="arch" type="xml">
+            <form string="University">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="address" />
+                        <field name="states_university" />
+                    </group>
+                    <group string="Upload Student Info">
+                        <field name="excel_file" filename="file_name" />
+                        <field name="file_name" invisible="1" />
+                    </group>
+                    <notebook>
+                        <page string="Student Info">
+                            <field name="listinfo">
+                                <list editable="bottom">
+                                    <field name="name" />
+                                    <field name="student_id" />
+                                    <field name="email" />
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_university" model="ir.actions.act_window">
+        <field name="name">Quản lý trường đại học</field>
+        <field name="res_model">university</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="view_university_list" />
+    </record>
+
+    <menuitem id="menu_university_root" name="Quản lý trường đại học" sequence="10"
+        action="action_university" parent="base.menu_custom" />
+
+</odoo>
